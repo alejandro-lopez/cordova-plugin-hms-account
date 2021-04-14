@@ -1,4 +1,3 @@
-"use strict";
 /*
     Copyright 2020-2021. Huawei Technologies Co., Ltd. All rights reserved.
 
@@ -14,15 +13,12 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.obtainHashCode = exports.smsVerificationCode = void 0;
-const utils_1 = require("./utils");
-function smsVerificationCode() {
-    return utils_1.asyncExec('HMSReadSMSManager', 'smsVerificationCode', []);
+
+package com.huawei.hms.cordova.account.helpers;
+
+public interface Constants {
+    int SIGN_IN_REQUEST_ID = 8888;
+
+    int ERR_UNKNOWN = 500;
+    int ERR_HUAWEI_AUTH = 503;
 }
-exports.smsVerificationCode = smsVerificationCode;
-function obtainHashCode() {
-    return utils_1.asyncExec('HMSReadSMSManager', 'obtainHashCode', []);
-}
-exports.obtainHashCode = obtainHashCode;
-//# sourceMappingURL=HMSReadSMSManager.js.map

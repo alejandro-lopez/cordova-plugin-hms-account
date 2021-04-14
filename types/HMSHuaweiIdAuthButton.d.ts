@@ -1,4 +1,3 @@
-"use strict";
 /*
     Copyright 2020-2021. Huawei Technologies Co., Ltd. All rights reserved.
 
@@ -14,15 +13,22 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.obtainHashCode = exports.smsVerificationCode = void 0;
-const utils_1 = require("./utils");
-function smsVerificationCode() {
-    return utils_1.asyncExec('HMSReadSMSManager', 'smsVerificationCode', []);
+
+export declare enum Theme {
+    THEME_NO_TITLE = 0,
+    THEME_FULL_TITLE = 1
 }
-exports.smsVerificationCode = smsVerificationCode;
-function obtainHashCode() {
-    return utils_1.asyncExec('HMSReadSMSManager', 'obtainHashCode', []);
+export declare enum ColorPolicy {
+    COLOR_POLICY_BLUE = 0,
+    COLOR_POLICY_RED = 1,
+    COLOR_POLICY_WHITE = 2,
+    COLOR_POLICY_WHITE_WITH_BORDER = 3,
+    COLOR_POLICY_BLACK = 4,
+    COLOR_POLICY_GRAY = 5
 }
-exports.obtainHashCode = obtainHashCode;
-//# sourceMappingURL=HMSReadSMSManager.js.map
+export declare enum CornerRadius {
+    CORNER_RADIUS_LARGE = -1,
+    CORNER_RADIUS_MEDIUM = -2,
+    CORNER_RADIUS_SMALL = -3
+}
+export declare function getHuaweiIdAuthButton(edittedButton: string, theme: Theme, colorPolicy: ColorPolicy, cornerRadius: CornerRadius): void;

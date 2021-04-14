@@ -1,4 +1,3 @@
-"use strict";
 /*
     Copyright 2020-2021. Huawei Technologies Co., Ltd. All rights reserved.
 
@@ -14,15 +13,18 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.obtainHashCode = exports.smsVerificationCode = void 0;
-const utils_1 = require("./utils");
-function smsVerificationCode() {
-    return utils_1.asyncExec('HMSReadSMSManager', 'smsVerificationCode', []);
+
+import { asyncExec } from './utils'
+import { Cookie, DomainInfo } from './HMSCommonTypes';
+
+
+export function buildNetworkURL(domainHttps: DomainInfo): Promise<String> {
+  return asyncExec('HMSNetworkTool', 'buildNetworkURL', [domainHttps]);
 }
-exports.smsVerificationCode = smsVerificationCode;
-function obtainHashCode() {
-    return utils_1.asyncExec('HMSReadSMSManager', 'obtainHashCode', []);
+
+export function buildNetworkCookie(cookie: Cookie): Promise<String> {
+  return asyncExec('HMSNetworkTool', 'buildNetworkCookie', [cookie]);
 }
-exports.obtainHashCode = obtainHashCode;
-//# sourceMappingURL=HMSReadSMSManager.js.map
+
+
+

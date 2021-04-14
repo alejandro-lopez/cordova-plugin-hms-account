@@ -1,4 +1,3 @@
-"use strict";
 /*
     Copyright 2020-2021. Huawei Technologies Co., Ltd. All rights reserved.
 
@@ -14,15 +13,19 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.obtainHashCode = exports.smsVerificationCode = void 0;
-const utils_1 = require("./utils");
-function smsVerificationCode() {
-    return utils_1.asyncExec('HMSReadSMSManager', 'smsVerificationCode', []);
+
+import { asyncExec } from './utils'
+import { Account, AuthScopeList } from './HMSCommonTypes';
+
+export function deleteAuthInfo(accessToken: string): Promise<void> {
+  return asyncExec('HMSHuaweiIdAuthTool', 'deleteAuthInfo', [accessToken]);
 }
-exports.smsVerificationCode = smsVerificationCode;
-function obtainHashCode() {
-    return utils_1.asyncExec('HMSReadSMSManager', 'obtainHashCode', []);
+
+export function requestUnionId(huaweiAccountName: string): Promise<string> {
+  return asyncExec('HMSHuaweiIdAuthTool', 'requestUnionId', [huaweiAccountName]);
 }
-exports.obtainHashCode = obtainHashCode;
-//# sourceMappingURL=HMSReadSMSManager.js.map
+
+export function requestAccessToken(account: Account, authScopeList: AuthScopeList[]): Promise<string> {
+  return asyncExec('HMSHuaweiIdAuthTool', 'requestAccessToken', [account, authScopeList]);
+}
+

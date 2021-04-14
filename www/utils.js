@@ -15,14 +15,16 @@
     limitations under the License.
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.obtainHashCode = exports.smsVerificationCode = void 0;
-const utils_1 = require("./utils");
-function smsVerificationCode() {
-    return utils_1.asyncExec('HMSReadSMSManager', 'smsVerificationCode', []);
+exports.asyncExec = void 0;
+const cordova_1 = require("cordova");
+//
+// Exports
+//
+function asyncExec(clazz, func, args) {
+    return new Promise((resolve, reject) => {
+        cordova_1.exec(resolve, reject, clazz, func, args);
+    });
 }
-exports.smsVerificationCode = smsVerificationCode;
-function obtainHashCode() {
-    return utils_1.asyncExec('HMSReadSMSManager', 'obtainHashCode', []);
-}
-exports.obtainHashCode = obtainHashCode;
-//# sourceMappingURL=HMSReadSMSManager.js.map
+exports.asyncExec = asyncExec;
+;
+//# sourceMappingURL=utils.js.map

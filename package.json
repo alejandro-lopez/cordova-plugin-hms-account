@@ -1,53 +1,71 @@
 {
-    "name": "@hmscore/cordova-plugin-hms-account",
-    "description": "Huawei Account Cordova Plugin",
-    "version": "5.0.3-303",
-    "main": "./www/index.js",
-    "types": "types/index.d.ts",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/HMS-Core/hms-cordova-plugin/tree/master/cordova-plugin-hms-account",
-        "directory": "cordova-plugin-hms-account"
-    },
-    "bugs": "https://github.com/HMS-Core/hms-cordova-plugin/issues",
-    "homepage": "https://developer.huawei.com/consumer/en/doc/overview/HMS-Core-Plugin",
-    "license": "Apache-2.0",
-    "licenseFilename": "LICENCE",
-    "readmeFilename": "README.md",
-    "cordova": {
-        "id": "cordova-plugin-hms-account",
-        "platforms": []
-    },
-    "keywords": [
-        "cordova",
-        "ecosystem:cordova",
-        "cordova-android",
-        "account",
-        "huawei-account",
-        "hms-account",
-        "huawei",
-        "hms"
-    ],
-    "files": [
-        "hooks",
-        "ionic-native",
-        "src",
-        "types",
-        "www",
-        "LICENCE",
-        "package.json",
-        "plugin.xml",
-        "README.md"
-    ],
-    "dependencies": {
-        "@types/cordova": "0.0.34"
-    },
-    "devDependencies": {
-        "typescript": "3.9.5"
-    },
-    "scripts": {
-        "build:core": "node ./node_modules/typescript/bin/tsc",
-        "build": "npm run build:core",
-        "watch": "node ./node_modules/typescript/bin/tsc --watch"
+  "_from": "git+https://github.com/alejandro-lopez/cordova-plugin-hms-account.git",
+  "_id": "cordova-plugin-hms-account@5.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-hms-account",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/alejandro-lopez/cordova-plugin-hms-account",
+    "rawSpec": "https://github.com/alejandro-lopez/cordova-plugin-hms-account",
+    "saveSpec": "git+https://github.com/alejandro-lopez/cordova-plugin-hms-account.git",
+    "fetchSpec": "https://github.com/alejandro-lopez/cordova-plugin-hms-account.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "git+https://github.com/alejandro-lopez/cordova-plugin-hms-account.git#b2c1db0bc0f6ffa5103ea6462d3e197848b3ac8a",
+  "_spec": "https://github.com/alejandro-lopez/cordova-plugin-hms-account",
+  "_where": "C:\\SmartTracker_Huawei",
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-hms-account",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Huawei Account Cordova Plugin",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-semistandard": "^11.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
     }
+  ],
+  "files": [
+    "hooks/**",
+    "resources/**",
+    "src/**",
+    "www/**",
+    "package.json",
+    "plugin.xml",
+    "README.md",
+    "LICENCE"
+  ],
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "Apache-2.0",
+  "name": "cordova-plugin-hms-account",
+  "packagename": "cordova-account",
+  "packageversion": "5.0.0.300",
+  "scripts": {
+    "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests",
+    "test": "npm run eslint"
+  },
+  "version": "5.0.0"
 }
